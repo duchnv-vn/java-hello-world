@@ -1,6 +1,6 @@
 package setion_2;
 
-class Main {
+class Section2 {
     public static void main(String[] args) {
         boolean booleanVar = true;
         booleanVar = false;
@@ -42,5 +42,24 @@ class Main {
 
         char unicodeNumVar = 1;
         System.out.println("unicodeNumVar: " + unicodeNumVar);
+
+        int octalNumberVar = 0567; // 7*8^0 + 6*8^1 + 5*8^2 = 375
+        System.out.println("octalNumberVar: " + octalNumberVar);
+
+        int hexaNumberVar = 0x1A3; // 3*16^0 + 10*16^1 + 1*16^2 = 419
+        System.out.println("hexaNumberVar: " + hexaNumberVar);
+
+        int binaryNumberVar = 0b1101; // 1*2^0 + 0*2^1 + 1*2^2 + 1*2^3 = 13
+        System.out.println("binaryNumberVar: " + binaryNumberVar);
+
+        float testNarrowingFloatVar1 = 3.49f;
+        int testNarrowingIntVar1 = (int) testNarrowingFloatVar1;
+        System.out.println("testNarrowingFloatVar1: " + testNarrowingFloatVar1);
+        System.out.println("testNarrowingIntVar1: " + testNarrowingIntVar1);
+
+        float testNarrowingFloatVar2 = 3.999f;
+        int testNarrowingIntVar2 = (int) testNarrowingFloatVar2;
+        System.out.println("testNarrowingFloatVar2: " + testNarrowingFloatVar2);
+        System.out.println("testNarrowingIntVar2: " + testNarrowingIntVar2);
     }
 }
