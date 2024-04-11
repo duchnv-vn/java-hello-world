@@ -48,3 +48,24 @@
     };
   }
   ```
+
+## Instance initialization
+- Constructor:
+  ```
+  [modifier] class <class-name> {
+    public <class-name> (<parameters>) {
+      <!-- Write initialzation code here -->
+    };
+  }
+  ```
+
+- Instance initialization block:
+  - Utilization reason:
+    - Anonymous class: cannot define constructor
+  ```
+  [modifier] class <class-name> {
+    {
+      <!-- Write initialzation code here -->
+    }
+  }
+  ```
