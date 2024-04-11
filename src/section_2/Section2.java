@@ -1,6 +1,6 @@
-package setion_2;
+package section_2;
 
-class Section2 {
+public class Section2 {
     public static void main(String[] args) {
         boolean booleanVar = true;
         booleanVar = false;
