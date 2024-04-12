@@ -3,6 +3,7 @@ package section_4;
 import java.text.MessageFormat;
 
 public class Person {
+  static String timezone;
   static private final String NATIONALITY = "Vietnam";
   private String firstName;
   private String lastName;
@@ -10,8 +11,13 @@ public class Person {
   private String gender;
   private short dateOfBirth;
 
+  static {
+    System.out.println("Person object's static initializer block is running...'");
+    timezone = "Asia/Ho_Chi_Minh";
+  }
+
   {
-    System.out.println("Person object is being created.");
+    System.out.println("Person object's instance initializer block is running...'");
   }
 
   public Person(String firstName, String lastName, byte age, String gender, String dateOfBirth) {

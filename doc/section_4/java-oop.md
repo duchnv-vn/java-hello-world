@@ -50,7 +50,9 @@
   ```
 
 ## Instance initialization
+
 - Constructor:
+
   ```
   [modifier] class <class-name> {
     public <class-name> (<parameters>) {
@@ -65,7 +67,66 @@
   ```
   [modifier] class <class-name> {
     {
-      <!-- Write initialzation code here -->
+      <!-- Write initialization code here -->
     }
   }
   ```
+- Static initialization block:
+  - Utilization reason:
+    - Define static variables:
+  ```
+  [modifier] class <class-name> {
+    static {
+      <!-- Write initialization code here -->
+    }
+  }
+  ```
+
+## Life cycle of class:
+
+1. Static initializer block:
+2. Instance initializer block (not executed if run file directly):
+3. Constructor (not executed if run file directly):
+4. Main (if run file directly):
+
+## Memory management in Java:
+
+- Handled by JVM for allocating & de-allocating memory
+- Memory's types:
+  - <strong>HEAP MEMORY:</strong>
+    - Allocate:
+      - Objects
+    - Reclaimed by JVM's garbage collector when no longer being used
+  - <strong>STACK MEMORY:</strong>
+    - Allocate:
+      - Local variables
+      - Method calls
+    - When method called -> new stack frame is created on stack
+    - When method returns -> stack frame is removed
+  - <strong>METHOD AREA / CLASS AREA:</strong>
+    - Allocate:
+      - Class definitions
+      - Method definitions
+      - Runtime constants / Static variables
+  - <strong>NATIVE HEAP:</strong>
+    - Allocate:
+      - Native libraries
+      - Bytecode will be executed frequently -> JIT compiler convert to native executable code -> Cache
+
+## Important keywords:
+
+- Class
+- Object:
+  - The same meaning with instance
+  - Contain unique set of values
+- Instance:
+  - The same meaning with object
+- Reference:
+  - Variable holds memory address of an object
+  - Used to access object's properties & methods
+
+## Encapsulation:
+
+- Refer 2 concepts:
+  - Group fields (attribute) & methods (behavior) together within a single object
+  - Hide some certain fields & methods from public access (using private, protected modifier)
