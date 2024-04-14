@@ -22,5 +22,51 @@ public class Section6 {
         String statement = "Hello everybody, my name is Duc Huynh. Nice to meet you!";
         String regex = ".*my name.*".toLowerCase();
         boolean isExist = statement.toLowerCase().matches(regex);
+
+        // SPLITTING
+        String originalString = "1,2,3,4,5";
+        String[] splittedStrings = originalString.split(",");
+        String joinedString = String.join(".", splittedStrings);
+
+        // STRING FORMAT
+        String messageFormat = "Hello %s, you have %d new messages.";
+        String message1 = String.format(messageFormat, "Duc", 9);
+
+        // MUTABLE STRING
+        StringBuilder sb = new StringBuilder("hello");
+        sb.append(" world.");
+        String string1 = sb.toString();
+
+        StringBuffer sb2 = new StringBuffer("hello");
+        sb2.append(" world.");
+        String string2 = sb.toString();
+
+        // TEXT BLOCK
+        String textBlock = """
+                    <html>
+                        <body>
+                            <h1>Hello world.</h1>
+                        </body>
+                    </html>
+                """;
+
+        // STRING TO PRIMITIVE TYPE
+        String strInteger = "123";
+        int parsedInteger = Integer.parseInt(strInteger);
+
+        String strDouble = "3.14";
+        double parsedDouble = Double.parseDouble(strDouble);
+
+        String strFloat = "1.23";
+        float parsedFloat = Float.parseFloat(strFloat);
+
+        String strLong = "123123123123123";
+        long parsedLong = Long.parseLong(strLong);
+
+        String strBoolean = "true";
+        boolean parsedBoolean = Boolean.parseBoolean(strBoolean);
+
+        String str = "Hello";
+        char charFromStr = str.charAt(0);
     }
 }

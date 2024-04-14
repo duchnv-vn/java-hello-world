@@ -119,3 +119,72 @@
         String currentString = "Hello, World!";
         String newString = currentString.replaceFirst("o", "*");
         ```
+
+## Mutable string
+1. StringBuilder:
+    - Syntax:
+        ```
+        StringBuilder sb = new StringBuilder("hello");
+        sb.append(" world");
+        String text = sb.toString();
+        ```
+2. StringBuffer:
+    - Thread-safe
+    - Syntax:
+        ```
+        StringBuffer sb = new StringBuffer("hello");
+        sb.append(" world");
+        String text = sb.toString();
+        ```
+3. CharArrayWrite:
+    - Syntax:
+        ```
+        CharArrayWriter cw = new CharArrayWriter();
+        cw.write("hello");
+        cw.write(" world");
+        String text = cw.toString();
+        ```
+
+## Text block
+- Syntax:
+    ```
+    String textBlock = """
+        <html>
+            <body>
+                <h1>Hello world.</h1>
+            </body>
+        </html>
+    """;
+    ```
+
+## Convert string to primitive type
+- Integer:
+    ```
+    String strInteger = "123";
+    int parsedInteger = Integer.parseInt(strInteger);
+    ```
+- Double:
+    ```
+    String strDouble = "3.14";
+    double parsedDouble = Double.parseDouble(strDouble);
+    ```
+- Float:
+    ```
+    String strFloat = "1.23";
+    float parsedFloat = Float.parseFloat(strFloat);
+    ```
+- Long:
+    ```
+    String strLong = "123123123123123";
+    long parsedLong = Long.parseLong(strLong);
+    ```
+- Boolean:
+    ```
+    String strBoolean = "true";
+    boolean parsedBoolean = Boolean.parseBoolean(strBoolean);
+    ```
+- Char:
+    ```
+    String str = "Hello";
+    char charFromStr = str.charAt(0);
+    ```
