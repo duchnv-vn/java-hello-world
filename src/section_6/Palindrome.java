@@ -1,3 +1,5 @@
+package section_6;
+
 public class Palindrome {
     private boolean isPalindrome;
 
