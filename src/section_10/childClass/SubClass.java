@@ -8,4 +8,8 @@ public class SubClass extends SuperClass {
         this.setAge(27);
     }
 
+    public void coding() {
+        System.out.println(this.getName() + " is coding...");
+    }
+
 }
