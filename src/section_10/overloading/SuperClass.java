@@ -9,4 +9,8 @@ public class SuperClass {
         System.out
                 .println("method 1 of Super class is executing with 2 String arguments: " + input1 + " and " + input2);
     }
+
+    public static void start() {
+        System.out.println("Super class is starting...");
+    }
 }

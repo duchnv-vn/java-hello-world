@@ -15,4 +15,8 @@ public class SubClass extends SuperClass {
                 .println("method 1 of Super class is executing with 2 Integer arguments: " + input1 + " and " + input2);
     }
 
+    public static void start() {
+        System.out.println("Sub class is starting...");
+    }
+
 }
