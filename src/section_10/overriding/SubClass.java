@@ -1,4 +1,4 @@
-package section_10.overriding;
+package overriding;
 
 public class SubClass extends SuperClass {
 

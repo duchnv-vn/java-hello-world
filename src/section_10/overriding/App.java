@@ -1,4 +1,4 @@
-package section_10.overriding;
+package overriding;
 
 public class App {
     public static void main(String[] args) {
