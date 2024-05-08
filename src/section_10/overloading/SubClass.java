@@ -1,6 +1,10 @@
 package overloading;
 
 public class SubClass extends SuperClass {
+    public SubClass() {
+
+    }
+
     @Override
     public void method1(String input) {
         System.out.println("method 1 of Sub class is executing with String argument: " + input);

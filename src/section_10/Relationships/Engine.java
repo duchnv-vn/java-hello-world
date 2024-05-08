@@ -1,4 +1,4 @@
-package Relationships;
+package relationships;
 
 public class Engine {
 
