@@ -1,5 +1,7 @@
 package parentClass;
 
+import childClass.SubClass;
+
 public class SuperClass {
     private String name;
 
