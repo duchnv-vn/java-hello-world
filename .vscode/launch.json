@@ -8,6 +8,13 @@
             "type": "java",
             "name": "App",
             "request": "launch",
+            "mainClass": "section_10.overriding.App",
+            "projectName": "java-hello-world_6ef4e866"
+        },
+        {
+            "type": "java",
+            "name": "App",
+            "request": "launch",
             "mainClass": "app.App",
             "projectName": "java-hello-world_6ef4e866"
         },
