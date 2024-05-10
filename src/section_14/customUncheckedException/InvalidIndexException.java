@@ -1,6 +1,6 @@
-package section_14.customCheckedException;
+package section_14.customUncheckedException;
 
-public class InvalidIndexException extends Exception {
+public class InvalidIndexException extends ArrayIndexOutOfBoundsException {
     public InvalidIndexException() {
         super();
     }

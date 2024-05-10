@@ -4,7 +4,7 @@ import java.util.InputMismatchException;
 import java.util.Scanner;
 import java.util.logging.Logger;
 
-import section_14.customCheckedException.InvalidIndexException;
+import section_14.customUncheckedException.InvalidIndexException;
 
 public class Section14 {
 
@@ -17,8 +17,8 @@ public class Section14 {
             System.out.println("Enter numberical index value");
             int index = scanner.nextInt();
 
-            if (index < 0) {
-                throw new InvalidIndexException("Index must greater or equal zero");
+            if (index < 0 | index > customArray.length) {
+                throw new InvalidIndexException("Index must greater/equal zero and smaller than array length");
             }
 
             String value = customArray[index];
