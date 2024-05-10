@@ -4,6 +4,8 @@ import java.util.InputMismatchException;
 import java.util.Scanner;
 import java.util.logging.Logger;
 
+import section_14.customCheckedException.InvalidIndexException;
+
 public class Section14 {
 
     private static Logger logger = Logger.getLogger(Section14.class.getName());
@@ -15,6 +17,10 @@ public class Section14 {
             System.out.println("Enter numberical index value");
             int index = scanner.nextInt();
 
+            if (index < 0) {
+                throw new InvalidIndexException("Index must greater or equal zero");
+            }
+
             String value = customArray[index];
             logger.info("Value of index " + index + " = " + value.toUpperCase());
         } catch (NullPointerException e) {
@@ -24,7 +30,7 @@ public class Section14 {
         } catch (ArrayIndexOutOfBoundsException e) {
             logger.severe("This is array index out of bound exception");
         } catch (Exception e) {
-            logger.severe("This is general exception");
+            logger.severe("This is general exception: " + e.getMessage());
         } finally {
             // NO NEED TO CLOSE CONNECTION
             // scanner.close();
