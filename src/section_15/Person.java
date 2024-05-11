@@ -2,18 +2,21 @@ package section_15;
 
 import java.text.MessageFormat;
 import java.util.Objects;
+import section_15.immutableClass.House;
 
 public class Person implements Cloneable {
     private String name;
     private int age;
     private String idCardNumber;
     private Job job;
+    private House house;
 
-    public Person(String name, int age, String idCardNumber, Job job) {
+    public Person(String name, int age, String idCardNumber, Job job, House house) {
         this.name = name;
         this.age = age;
         this.idCardNumber = idCardNumber;
         this.job = job;
+        this.house = house;
     }
 
     @Override
@@ -25,10 +28,12 @@ public class Person implements Cloneable {
                 idCardNumber: {2}
                 company: {3}
                 position: {4}
+                address: {5} - ({6} meter square)
                 -------------------------------------
                 """;
 
-        return MessageFormat.format(format, name, age, idCardNumber, job.getCompanyName(), job.getPosition());
+        return MessageFormat.format(format, name, age, idCardNumber, job.getCompanyName(), job.getPosition(),
+                house.address(), house.area());
     }
 
     @Override
@@ -56,6 +61,7 @@ public class Person implements Cloneable {
     protected Person clone() throws CloneNotSupportedException {
         Person clone = (Person) super.clone();
         clone.job = job.clone();
+        clone.house = house.clone();
         return clone;
     }
 
@@ -89,5 +95,13 @@ public class Person implements Cloneable {
 
     public void setJob(Job job) {
         this.job = job;
+    }
+
+    public House getHouse() {
+        return house;
+    }
+
+    public void setHouse(House house) {
+        this.house = house;
     }
 }
