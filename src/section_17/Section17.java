@@ -1,6 +1,7 @@
 package section_17;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.Iterator;
@@ -73,17 +74,27 @@ public class Section17 {
         // countryNames.sort(new LastCharComparator()); // INCREMENT
         // System.out.println("AFTER: " + countryNames);
 
-        var students = new ArrayList<Student>();
-        students.add(new Student("CCC", "Huynh", "33333", "A1", 7.1f));
-        students.add(new Student("AAA", "Huynh", "11111", "A1", 3.5f));
-        students.add(new Student("BBB", "Huynh", "55555", "A1", 6.5f));
-        students.add(new Student("EEE", "Huynh", "66666", "A1", 6.5f));
-        students.add(new Student("DDD", "Huynh", "44444", "A1", 0.5f));
-        System.out.println("BEFORE: \n" + students);
+        // CUSTOM COMPARISON LOGIC
+        // var students = new ArrayList<Student>();
+        // students.add(new Student("CCC", "Huynh", "33333", "A1", 7.1f));
+        // students.add(new Student("AAA", "Huynh", "11111", "A1", 3.5f));
+        // students.add(new Student("BBB", "Huynh", "55555", "A1", 6.5f));
+        // students.add(new Student("EEE", "Huynh", "66666", "A1", 6.5f));
+        // students.add(new Student("DDD", "Huynh", "44444", "A1", 0.5f));
+        // System.out.println("BEFORE: \n" + students);
         // students.sort(null);
         // students.sort(new StudentSortingByGrade());
-        Collections.sort(students, new StudentSortingByGrade());
-        System.out.println("AFTER: \n" + students);
+        // Collections.sort(students, new StudentSortingByGrade());
+        // System.out.println("AFTER: \n" + students);
+
+        // CONVERT ARRAY-LIST TO ARRAY
+        var countries = countryNames.toArray(new String[countryNames.size()]);
+        System.out.println("countries: " + Arrays.toString(countries));
+
+        // CONVERT ARRAY TO ARRAY-LIST
+        List<String> newCountriesList = new ArrayList<String>();
+        newCountriesList = Arrays.asList(countries);
+        System.out.println("newCountriesList: " + newCountriesList);
 
         // ------------------------------------------------
         // LINKED LIST
