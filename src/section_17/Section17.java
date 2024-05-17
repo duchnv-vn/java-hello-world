@@ -13,6 +13,7 @@ public class Section17 {
         // LIST COLLECTION
         // ARRAY LIST
         var countryNames = new ArrayList<String>();
+        countryNames.add("Uruguay");
         countryNames.add("Vietnam");
         countryNames.add("USA");
         countryNames.add("Japan");
@@ -62,11 +63,27 @@ public class Section17 {
         // Collections.sort(numbers, Comparator.reverseOrder()); // DECREMENT
         // System.out.println("AFTER 2: " + numbers);
 
-        System.out.println("BEFORE: " + countryNames);
-        countryNames.sort(Comparator.naturalOrder()); // INCREMENT
-        System.out.println("AFTER 1: " + countryNames);
-        countryNames.sort(Comparator.reverseOrder()); // DECREMENT
-        System.out.println("AFTER 2: " + countryNames);
+        // System.out.println("BEFORE: " + countryNames);
+        // countryNames.sort(Comparator.naturalOrder()); // INCREMENT
+        // System.out.println("AFTER 1: " + countryNames);
+        // countryNames.sort(Comparator.reverseOrder()); // DECREMENT
+        // System.out.println("AFTER 2: " + countryNames);
+
+        // System.out.println("BEFORE: " + countryNames);
+        // countryNames.sort(new LastCharComparator()); // INCREMENT
+        // System.out.println("AFTER: " + countryNames);
+
+        var students = new ArrayList<Student>();
+        students.add(new Student("CCC", "Huynh", "33333", "A1", 7.1f));
+        students.add(new Student("AAA", "Huynh", "11111", "A1", 3.5f));
+        students.add(new Student("BBB", "Huynh", "55555", "A1", 6.5f));
+        students.add(new Student("EEE", "Huynh", "66666", "A1", 6.5f));
+        students.add(new Student("DDD", "Huynh", "44444", "A1", 0.5f));
+        System.out.println("BEFORE: \n" + students);
+        // students.sort(null);
+        // students.sort(new StudentSortingByGrade());
+        Collections.sort(students, new StudentSortingByGrade());
+        System.out.println("AFTER: \n" + students);
 
         // ------------------------------------------------
         // LINKED LIST
