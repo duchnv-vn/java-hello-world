@@ -15,11 +15,18 @@ public class Section19 {
         Integer[] numbers = { 7, 4, 9, 0, 3 };
         printArray(numbers);
 
+        var subClass = new ArrayList<SubClass>();
+        printArray2(subClass);
+
     }
 
     public static <T> void printArray(T[] array) {
         for (var item : array) {
             System.out.println(item);
         }
+    }
+
+    public static void printArray2(ArrayList<? extends SuperClass> list) {
+        System.out.println(list);
     }
 }
