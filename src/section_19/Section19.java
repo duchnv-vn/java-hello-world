@@ -18,6 +18,9 @@ public class Section19 {
         var subClass = new ArrayList<SubClass>();
         printArray2(subClass);
 
+        var superClass = new ArrayList<SuperClass>();
+        printArray3(superClass);
+
     }
 
     public static <T> void printArray(T[] array) {
@@ -27,6 +30,10 @@ public class Section19 {
     }
 
     public static void printArray2(ArrayList<? extends SuperClass> list) {
+        System.out.println(list);
+    }
+
+    public static void printArray3(ArrayList<? super SubClass> list) {
         System.out.println(list);
     }
 }
