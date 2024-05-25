@@ -36,7 +36,7 @@ public class Section2 {
         // System.out.println("value: " + entry.getValue());
         // }
 
-        // ------ TREEMAP INITIATION & DECLARATION
+        // ------ LINKEDHASHMAP INITIATION & DECLARATION
         // var nameMap = new LinkedHashMap<String, String>();
         // nameMap.put("home", "Home");
         // nameMap.put("contact", "Contact");
