@@ -6,6 +6,20 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Section20",
+            "request": "launch",
+            "mainClass": "section_20.Section20",
+            "projectName": "java-hello-world_6ef4e866"
+        },
+        {
+            "type": "java",
+            "name": "Section21",
+            "request": "launch",
+            "mainClass": "Section21",
+            "projectName": "java-hello-world_6ef4e866"
+        },
+        {
+            "type": "java",
             "name": "Section2",
             "request": "launch",
             "mainClass": "section_20.Section2",

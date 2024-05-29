@@ -7,7 +7,7 @@ import java.util.Map;
 import java.util.TreeMap;
 import static java.util.Map.entry;
 
-public class Section2 {
+public class Section20 {
     public static void main(String[] args) {
         // ------ HASHMAP INITIATION & DECLARATION
         // Map<String, String> countryMap = new HashMap<>();
@@ -15,6 +15,7 @@ public class Section2 {
         countryMap2.put("usa", "Washington DC");
         countryMap2.put("vietnam", "Ha Noi");
         countryMap2.put("india", "New Delhi");
+        countryMap2.put("vietnam", "Ha Noi 2");
 
         // ----------------- ITERATE HASMAP KEYS
         // iterateKey(countryMap2);
