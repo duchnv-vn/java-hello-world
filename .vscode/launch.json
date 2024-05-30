@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Exercise",
+            "request": "launch",
+            "mainClass": "exercise.Exercise",
+            "projectName": "java-hello-world_6ef4e866"
+        },
+        {
+            "type": "java",
             "name": "Section20",
             "request": "launch",
             "mainClass": "section_20.Section20",
