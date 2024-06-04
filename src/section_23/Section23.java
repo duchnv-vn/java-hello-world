@@ -1,6 +1,8 @@
 import java.text.*;
 import java.util.*;
 import java.time.*;
+import java.time.format.DateTimeFormatter;
+import java.time.temporal.ChronoUnit;
 
 public class Section23 {
     public static void main(String[] args) throws ParseException {
@@ -34,7 +36,7 @@ public class Section23 {
 
         var gregoCalendar2 = new GregorianCalendar(TimeZone.getTimeZone("America/New_York"));
 
-        // NEW DATETIME API
+        // NEW TIME API
         var localDate = LocalDate.now();
         var localTime = LocalTime.now();
         var localDateTime = LocalDateTime.now();
@@ -47,8 +49,46 @@ public class Section23 {
 
         var newYorkTZ = ZoneId.of("America/New_York");
         var zonedDateTime3 = ZonedDateTime.of(2024, 6, 5, 12, 0, 0, 0, newYorkTZ);
+        var zonedDateTime4 = ZonedDateTime.now(newYorkTZ);
 
-        System.out.println("zonedDateTime2: " + zonedDateTime2);
-        System.out.println("zonedDateTime3: " + zonedDateTime3);
+        // INSTANT & DURATION & PERIOD
+        var instant1 = Instant.ofEpochSecond(10 * 24 * 60 * 60);
+        var instant2 = Instant.now();
+        var instant3 = instant2.plusSeconds(1);
+        var duration = Duration.between(instant2, instant3);
+
+        var localDate3 = localDate.plusMonths(1);
+        var period = Period.between(localDate, localDate3);
+
+        var oneYear2Months = Period.of(1, 2, 0);
+        var localDate4 = localDate.plus(oneYear2Months);
+
+        // MULTIPLE & DIVISION & NEGATION
+        var originDuration = Duration.ofMinutes(30);
+        var multipledDuration = originDuration.multipliedBy(3); // 1h30m
+        var multipledDuration2 = originDuration.dividedBy(3); // 10m
+
+        var originPeriod = Period.ofDays(2);
+        var negatedPeriod = originPeriod.negated();// -2d
+
+        // TRUNCATE
+        var duration2 = Duration.ofDays(28).plusHours(6).plusMinutes(59).plusSeconds(29);// PT678H59M29S
+        var hourOfDuration2 = duration2.truncatedTo(ChronoUnit.HOURS); // PT678H
+
+        // OFFSET
+        var originOffset = ZoneOffset.ofHours(7);
+        var destOffset = ZoneOffset.ofHours(-4);
+
+        var originDateTime = ZonedDateTime.now(originOffset);
+        var destDateTime = originDateTime.withZoneSameInstant(destOffset);
+
+        // DATETIME FORMATTER
+        var dateTimeFormatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss", Locale.ENGLISH);
+        var now = LocalDateTime.now();
+        var formattedNow = dateTimeFormatter.format(now);
+
+        var dateString2 = "2024-06-04 18:51:19";
+        var parsedDate = dateTimeFormatter.parse(dateString2);
+
     }
 }
