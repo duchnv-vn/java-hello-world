@@ -3,28 +3,22 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Calendar;
 import java.util.GregorianCalendar;
+import java.util.TimeZone;
 
 public class Section23 {
     public static void main(String[] args) throws ParseException {
         // LEGACY DATE
         var date = new Date();
-        System.out.println("date: " + date);
 
         var dateFormat = new SimpleDateFormat("yyyy-MM-dd");
         var formattedDate = dateFormat.format(date);
-
-        // System.out.println("formattedDate: " + formattedDate);
 
         // DATE PARSING: STRING -> OBJECT
         var dateString = "2025-06-03";
         var date2 = dateFormat.parse(dateString);
 
-        // System.out.println("date2: " + date2);
-
         // SQL DATE
         var date3 = new java.sql.Date(System.currentTimeMillis());
-
-        // System.out.println("date3: " + date3);
 
         // CALENDAR
         var gregoCalendar = new GregorianCalendar();
@@ -32,8 +26,16 @@ public class Section23 {
         var currentMonth = gregoCalendar.get(Calendar.MONTH);
         var currentDate = gregoCalendar.get(Calendar.DATE);
 
-        // System.out.println("currentYear: " + currentYear);
-        // System.out.println("currentMonth: " + currentMonth);
-        // System.out.println("currentDate: " + currentDate);
+        // TIMEZONE
+        var timezoneIds = TimeZone.getAvailableIDs();
+        var dateFormat2 = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        dateFormat2.setTimeZone(TimeZone.getTimeZone("Ameria/New_York"));
+        var NYDate = dateFormat2.format(new Date());
+
+        dateFormat2.setTimeZone(TimeZone.getTimeZone("Asia/Ho_Chi_Minh"));
+        var VNDate = dateFormat2.format(new Date());
+
+        var gregoCalendar2 = new GregorianCalendar(TimeZone.getTimeZone("Ameria/New_York"));
+
     }
 }
