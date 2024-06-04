@@ -1,9 +1,6 @@
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.Date;
-import java.util.Calendar;
-import java.util.GregorianCalendar;
-import java.util.TimeZone;
+import java.text.*;
+import java.util.*;
+import java.time.*;
 
 public class Section23 {
     public static void main(String[] args) throws ParseException {
@@ -29,13 +26,29 @@ public class Section23 {
         // TIMEZONE
         var timezoneIds = TimeZone.getAvailableIDs();
         var dateFormat2 = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-        dateFormat2.setTimeZone(TimeZone.getTimeZone("Ameria/New_York"));
+        dateFormat2.setTimeZone(TimeZone.getTimeZone("America/New_York"));
         var NYDate = dateFormat2.format(new Date());
 
         dateFormat2.setTimeZone(TimeZone.getTimeZone("Asia/Ho_Chi_Minh"));
         var VNDate = dateFormat2.format(new Date());
 
-        var gregoCalendar2 = new GregorianCalendar(TimeZone.getTimeZone("Ameria/New_York"));
+        var gregoCalendar2 = new GregorianCalendar(TimeZone.getTimeZone("America/New_York"));
 
+        // NEW DATETIME API
+        var localDate = LocalDate.now();
+        var localTime = LocalTime.now();
+        var localDateTime = LocalDateTime.now();
+        var zonedDateTime = ZonedDateTime.now();
+
+        var localDate2 = LocalDate.of(2024, Month.JUNE, 5);
+
+        var saigonTZ = ZoneId.of("Asia/Ho_Chi_Minh");
+        var zonedDateTime2 = ZonedDateTime.of(2024, 6, 5, 12, 0, 0, 0, saigonTZ);
+
+        var newYorkTZ = ZoneId.of("America/New_York");
+        var zonedDateTime3 = ZonedDateTime.of(2024, 6, 5, 12, 0, 0, 0, newYorkTZ);
+
+        System.out.println("zonedDateTime2: " + zonedDateTime2);
+        System.out.println("zonedDateTime3: " + zonedDateTime3);
     }
 }
