@@ -88,7 +88,6 @@ public class Section23 {
         var formattedNow = dateTimeFormatter.format(now);
 
         var dateString2 = "2024-06-04 18:51:19";
-        var parsedDate = dateTimeFormatter.parse(dateString2);
-
+        var parsedDate = LocalDateTime.parse(dateString2, dateTimeFormatter);
     }
 }
