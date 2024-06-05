@@ -3,6 +3,7 @@ package section_24;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.function.BiFunction;
+import java.util.function.Consumer;
 import java.util.function.Function;
 import java.util.function.Predicate;
 import java.util.function.UnaryOperator;
@@ -40,6 +41,7 @@ public class Section24 {
         var result4 = powerExec(powerFunc2, 5, 6);
         var result5 = powerExec((a, b) -> Math.pow(a, b), 1, 0);
 
+        // PREDICATE
         Predicate<Integer> isEvenFunc = (a) -> a % 2 == 0;
         Predicate<Integer> isGreaterThan5 = (a) -> a > 5;
         var checkEvenAndGreaterThan5 = isEvenFunc.and(isGreaterThan5).test(20);
@@ -50,8 +52,13 @@ public class Section24 {
         var numbers = Arrays.asList(1, 2, 3, 4, 5, 6, 7, 8, 9);
         var evenNumbers = numbers.stream().filter(isEvenFunc).toList();
 
+        // UNARY OPERATOR
         UnaryOperator<Integer> multiTenFunc = (a) -> a * 10;
         var result6 = multiTenFunc.apply(3);
+
+        // COMSUMER
+        Consumer<String> printLog = (a) -> System.out.println("[" + a + "]");
+        printLog.accept("Hello World");
     }
 
     public static double powerExec(PowerFunc func, int a, int b) {
