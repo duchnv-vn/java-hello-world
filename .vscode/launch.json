@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Section24",
+            "request": "launch",
+            "mainClass": "section_24.Section24",
+            "projectName": "java-hello-world_6ef4e866"
+        },
+        {
+            "type": "java",
             "name": "Exercise3",
             "request": "launch",
             "mainClass": "exercise_3.Exercise3",
