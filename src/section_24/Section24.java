@@ -1,11 +1,15 @@
 package section_24;
 
-import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Date;
+import java.util.function.BiConsumer;
 import java.util.function.BiFunction;
+import java.util.function.BiPredicate;
+import java.util.function.BinaryOperator;
 import java.util.function.Consumer;
 import java.util.function.Function;
 import java.util.function.Predicate;
+import java.util.function.Supplier;
 import java.util.function.UnaryOperator;
 
 @FunctionalInterface
@@ -59,6 +63,23 @@ public class Section24 {
         // COMSUMER
         Consumer<String> printLog = (a) -> System.out.println("[" + a + "]");
         printLog.accept("Hello World");
+
+        // SUPPLIER
+        Supplier<Long> getNowStampFunc = () -> new Date().getTime();
+        var now = getNowStampFunc.get();
+
+        // BI PREDICATE
+        BiPredicate<Integer, Integer> isSumEvenFunc = (a, b) -> (a + b) % 2 == 0;
+        var check = isSumEvenFunc.test(1, 2);
+
+        // BI CONSUMER
+        BiConsumer<String, String> printLogFunc = (firstName, lastName) -> System.out
+                .println("[" + "firstName:" + firstName + "|" + "lastName:" + lastName + "]");
+        printLogFunc.accept("Duc", "Huynh");
+
+        // BINARY OPERATOR
+        BinaryOperator<Integer> multipleFunc = (a, b) -> a * b;
+        var result7 = multipleFunc.apply(5, 6);
     }
 
     public static double powerExec(PowerFunc func, int a, int b) {

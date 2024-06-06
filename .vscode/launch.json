@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CurrentDaySupplier",
+            "request": "launch",
+            "mainClass": "section_24.exercise_6.CurrentDaySupplier",
+            "projectName": "java-hello-world_6ef4e866"
+        },
+        {
+            "type": "java",
             "name": "Exercise1",
             "request": "launch",
             "mainClass": "section_24.exercise_1.Exercise1",
