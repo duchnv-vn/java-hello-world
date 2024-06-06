@@ -80,6 +80,14 @@ public class Section24 {
         // BINARY OPERATOR
         BinaryOperator<Integer> multipleFunc = (a, b) -> a * b;
         var result7 = multipleFunc.apply(5, 6);
+
+        // LEXICAL SCOPE
+        var testNumber = 5;
+        // Consumer<Integer> testLexicalScope1 = (testNumber)-> {}; // INVALID ARGUMENT DECLARE
+        Supplier<Integer> testLexicalScope2 = () -> {
+            // var testNumber = 10; // INVALID VARIABLE DECLARE
+            return testNumber;
+        };
     }
 
     public static double powerExec(PowerFunc func, int a, int b) {
