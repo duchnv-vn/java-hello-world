@@ -2,6 +2,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Comparator;
 import java.util.List;
+import java.util.Map;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
@@ -14,13 +15,18 @@ class Information {
 }
 
 class Product {
+    private String category;
     private String name;
     private int price;
 
-    public Product(String name, int price) {
+    public Product(String category, String name, int price) {
+        this.category = category;
         this.name = name;
         this.price = price;
+    }
 
+    public String getCategory() {
+        return category;
     }
 
     public String getName() {
@@ -68,15 +74,22 @@ public class Section26 {
         var sum2 = numbers.stream().mapToInt(n -> n).sum();
 
         var products = new ArrayList<Product>();
-        // products.add(new Product("Product A", 10));
-        // products.add(new Product("Product B", 1));
-        // products.add(new Product("Product C", 99));
-        // products.add(new Product("Product D", 5));
+        products.add(new Product("AAA", "Product A", 10));
+        products.add(new Product("EEE", "Product B", 1));
+        products.add(new Product("AAA", "Product C", 99));
+        products.add(new Product("EEE", "Product D", 5));
 
+        // COLLECT AND THEN
         var maxPrice = products.stream()
                 .collect(
                         Collectors.collectingAndThen(
                                 Collectors.maxBy(Comparator.comparing(Product::getPrice)),
                                 (product -> product.isPresent() ? product.get().getName() : "None")));
+
+        // GROUPING
+        var groupedProducts = products.stream()
+                .collect(Collectors.groupingBy(Product::getCategory));
+        var partitioningProductsByPrice = products.stream()
+                .collect(Collectors.partitioningBy(product -> product.getPrice() > 5));
     }
 }
