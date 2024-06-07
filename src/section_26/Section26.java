@@ -1,5 +1,15 @@
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 import java.util.stream.Stream;
+
+class Information {
+    public int number;
+
+    public Information(int number) {
+        this.number = number;
+    }
+}
 
 public class Section26 {
     public static void main(String[] args) {
@@ -31,5 +41,10 @@ public class Section26 {
         var letters = Stream.of(fullName).map(word -> word.split("")).flatMap(Arrays::stream)
                 .map(word -> word.toLowerCase()).toList();
         ;
+
+        // REDUCE
+        int[] numbers = { 1, 2, 3, 4, 5 };
+        var sum = List.of(1, 2, 3, 4, 5).stream().reduce(0, Integer::sum);
+
     }
 }
