@@ -43,8 +43,9 @@ public class Section26 {
         ;
 
         // REDUCE
-        int[] numbers = { 1, 2, 3, 4, 5 };
-        var sum = List.of(1, 2, 3, 4, 5).stream().reduce(0, Integer::sum);
+        var numbers = List.of(1, 2, 3, 4, 5);
+        var sum = numbers.stream().reduce(0, Integer::sum);
+        var sum2 = numbers.stream().mapToInt(n -> n).sum();
 
     }
 }
