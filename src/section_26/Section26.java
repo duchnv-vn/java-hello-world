@@ -1,6 +1,8 @@
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Comparator;
 import java.util.List;
+import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 class Information {
@@ -8,6 +10,25 @@ class Information {
 
     public Information(int number) {
         this.number = number;
+    }
+}
+
+class Product {
+    private String name;
+    private int price;
+
+    public Product(String name, int price) {
+        this.name = name;
+        this.price = price;
+
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public int getPrice() {
+        return price;
     }
 }
 
@@ -24,7 +45,6 @@ public class Section26 {
         // wordsStream.map(word -> word.toUpperCase()); // can not chain multiple times
         // wordsStream.forEach(System.out::println); // can not chain multiple times
         var words2 = wordsStream.toList();
-        System.out.println("words2: " + words2);
 
         // EMPTY STREAM
         var emptyStream = Stream.empty();
@@ -44,8 +64,19 @@ public class Section26 {
 
         // REDUCE
         var numbers = List.of(1, 2, 3, 4, 5);
-        var sum = numbers.stream().reduce(0, Integer::sum);
+        var sum = numbers.stream().reduce(1, Integer::sum);
         var sum2 = numbers.stream().mapToInt(n -> n).sum();
 
+        var products = new ArrayList<Product>();
+        // products.add(new Product("Product A", 10));
+        // products.add(new Product("Product B", 1));
+        // products.add(new Product("Product C", 99));
+        // products.add(new Product("Product D", 5));
+
+        var maxPrice = products.stream()
+                .collect(
+                        Collectors.collectingAndThen(
+                                Collectors.maxBy(Comparator.comparing(Product::getPrice)),
+                                (product -> product.isPresent() ? product.get().getName() : "None")));
     }
 }
