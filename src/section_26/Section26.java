@@ -91,5 +91,16 @@ public class Section26 {
                 .collect(Collectors.groupingBy(Product::getCategory));
         var partitioningProductsByPrice = products.stream()
                 .collect(Collectors.partitioningBy(product -> product.getPrice() > 5));
+
+        // MATCHING
+        var allMatchPriceAbove5 = products.stream().allMatch(product -> product.getPrice() >= 5);
+        var allMatchPriceAbove1 = products.stream().allMatch(product -> product.getPrice() >= 5);
+        var hasAAACategory = products.stream().anyMatch(product -> product.getCategory().equals("AAA"));
+
+        // FINDING
+        var filteredProducts = products.stream().filter(product -> product.getCategory().equals("EEE"));
+        var findAny = filteredProducts.findAny();
+        var findFirst = filteredProducts.findFirst();
+
     }
 }
